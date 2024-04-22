@@ -1,0 +1,17 @@
+% color
+\usepackage{xcolor}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+
+\newcommand{\tbf}[1]{\texttt{\textcolor{airforceblue}{[#1]}}}
+
+% hyperlinks
+\usepackage[bookmarks=true, colorlinks, citecolor=airforceblue, linkcolor=airforceblue]{hyperref}
+
+% title formats
+\usepackage{titlesec}  % for titleformat
+
+\titleformat{\chapter}[block]
+  {\normalfont\LARGE\scshape}{Assignment \thechapter\\}{1em}{}
+
+\titleformat{\section}[block]
+  {\normalfont\large\bfseries}{Exercise \thesection}{1em}{}
