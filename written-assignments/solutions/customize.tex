@@ -15,3 +15,12 @@
 
 \titleformat{\section}[block]
   {\normalfont\large\bfseries}{Exercise \thesection}{1em}{}
+
+% math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% equation numbering
+\numberwithin{equation}{chapter}
+\renewcommand{\theequation}{\thechapter--\arabic{equation}}

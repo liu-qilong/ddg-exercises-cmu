@@ -3,7 +3,47 @@
 
 \section{Euler’s Polyhedral Formula—Simplicial}
 
+\begin{proof}
+    \textbf{Simplicial disk}. Suppose the formula $V - E + F = 1$ holds for a large simplicial disk. Remove one of its boundary vertex that connects to $n$ other vertices will reduce $V$ by $1$, $E$ by $n$, and $F$ by $n - 1$
+
+    \begin{equation}
+        (V - 1) - (E - n) + (F - n + 1) = V - E + F = 1
+    \end{equation}
+
+    Therefore, the formula still holds. Repeat this process util there is only only 1 face with $m$ vertices and $m$ edges, then
+
+    \begin{equation}
+        V - E + F = m - m + 1 = 1
+    \end{equation}
+
+    Therefore, the formula still holds. Inverse the vertices reduction process, we get a vertices addition process returning to the original simplicial disk. Sine for the 1 face case the formula $V - E + F = 1$ holds, the formula holds for the original large simplicial disk, as well as any simplicial disk.
+
+    \textbf{Simplicial surface}. A simplicial disk can be transformed to a simplicial surface by glueing its boundary with a face, whose edges are the edges of the boundary. This process only adds 1 face to the simplex, thus
+
+    \begin{equation}
+        V - E + F = 1 + 1 = 2
+    \end{equation}
+    holds for any simplicial surface.
+\end{proof}
+
 \section{Platonic Solids}
+
+\begin{proof}
+    Suppose every vertex have $v$ valence. Since each valence is a edge that connects to another vertex, 1/2 of this edge can be distributed to this vertex. Therefore, in total, $v/2$ edges can be distributed to this vertex, thus $E = \frac{v}{2}V$. Suppose each face has $f$ edges, 1/2 of this edge can be distributed to each face. Therefore, in total, each face has $f/2$ edges, thus $E = \frac{f}{2}F$. In summary
+
+    \begin{equation}
+        E = \frac{v}{2}V = \frac{f}{2}F
+        \label{eq:platonic}
+    \end{equation}
+
+    Constitute \autoref{eq:platonic} with Euler's formula $V - E + F = 2$
+
+    \begin{equation}
+        (\frac{2}{v} - 1 + \frac{2}{f}) E = 2 \Rightarrow E = \tbf{}
+    \end{equation}
+
+    \tbf{}
+\end{proof}
 
 \section{Regular Valence}
 
