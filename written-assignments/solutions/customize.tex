@@ -24,3 +24,13 @@
 % equation numbering
 \numberwithin{equation}{chapter}
 \renewcommand{\theequation}{\thechapter--\arabic{equation}}
+\def\equationautorefname#1#2\null{Eq.#1(#2\null)}
+
+% lemma
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+% table
+\usepackage{booktabs}  % for table
+\usepackage{multirow}  % for multi-row table
+\usepackage{float}  % 

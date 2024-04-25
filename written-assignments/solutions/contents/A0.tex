@@ -17,7 +17,9 @@
     \end{equation}
 
     Therefore, the formula still holds. Inverse the vertices reduction process, we get a vertices addition process returning to the original simplicial disk. Sine for the 1 face case the formula $V - E + F = 1$ holds, the formula holds for the original large simplicial disk, as well as any simplicial disk.
+\end{proof}
 
+\begin{proof}
     \textbf{Simplicial surface}. A simplicial disk can be transformed to a simplicial surface by glueing its boundary with a face, whose edges are the edges of the boundary. This process only adds 1 face to the simplex, thus
 
     \begin{equation}
@@ -28,20 +30,88 @@
 
 \section{Platonic Solids}
 
+\begin{lemma}
+    For a regular polyhedral, the edge number of each face $3 \leq f < 6$.
+\end{lemma}
+
 \begin{proof}
-    Suppose every vertex have $v$ valence. Since each valence is a edge that connects to another vertex, 1/2 of this edge can be distributed to this vertex. Therefore, in total, $v/2$ edges can be distributed to this vertex, thus $E = \frac{v}{2}V$. Suppose each face has $f$ edges, 1/2 of this edge can be distributed to each face. Therefore, in total, each face has $f/2$ edges, thus $E = \frac{f}{2}F$. In summary
+    Suppose each face has $f$ edges, noted that $f \geq 3$ to form a 2D face. This face can be decomposed into $f$ triangles, thus the sum of interior angles of the face is $f\pi - 2\pi$. Since this face is a regular polygon, the angle between edges should be
+    
+    \begin{equation}
+        \alpha = \frac{f-2}{f}\pi
+        \label{equ:edge-angle}
+    \end{equation}
+
+    Since each vertex should at least has 3 valence to form a 3D surface, thus at least 3 faces are glued to this vertex side-by-side. Therefore
+    
+    \begin{equation}
+        3 \alpha < 2 \pi
+        \Rightarrow 3 \frac{f-2}{f}\pi < 2 \pi
+        \Rightarrow f < 6
+    \end{equation}
+\end{proof}
+
+\begin{lemma}
+    For a regular polyhedral, the valence of each vertex $3 \leq v < \frac{2 f}{f - 2}$.
+\end{lemma}
+
+\begin{proof}
+    To form a 3D surface around a vertex, $v \geq 3$. Recall that the angle between edges is $\alpha = \frac{f-2}{f}\pi$ from \autoref{equ:edge-angle}, the valence
+
+    \begin{equation}
+        v < \frac{2 \pi}{\alpha} = \frac{2 f}{f - 2}
+    \end{equation}
+\end{proof}
+
+\begin{theorem}
+    There are only 5 types of regular polyhedra.
+\end{theorem}
+
+\begin{proof}
+    Since each valence is a edge that connects to another vertex, 1/2 of this edge can be distributed to this vertex. Therefore, in total, $v/2$ edges can be distributed to this vertex, thus $E = \frac{v}{2}V$. 
+    
+    Since 1/2 of this edge can be distributed to each face. Therefore, in total, each face has $f/2$ edges, thus $E = \frac{f}{2}F$. In summary
 
     \begin{equation}
         E = \frac{v}{2}V = \frac{f}{2}F
         \label{eq:platonic}
     \end{equation}
 
-    Constitute \autoref{eq:platonic} with Euler's formula $V - E + F = 2$
+    Constitute \autoref{eq:platonic} into Euler's formula $V - E + F = 2$
 
     \begin{equation}
-        (\frac{2}{v} - 1 + \frac{2}{f}) E = 2 \Rightarrow E = \tbf{}
+        (\frac{2}{v} - 1 + \frac{2}{f}) E = 2
+        \Rightarrow E = \frac{1}{\frac{1}{v} + \frac{1}{f} - \frac{1}{2}}
     \end{equation}
 
+    Thus $E, V, F$ can be expressed by $v, f$:
+
+    \begin{equation}
+        \begin{cases}
+            E = \frac{1}{\frac{1}{v} + \frac{1}{f} - \frac{1}{2}}\\
+            V = \frac{2}{v} E = \frac{2}{v(\frac{1}{v} + \frac{1}{f} - \frac{1}{2})}\\
+            F = \frac{2}{f} E = \frac{2}{f(\frac{1}{v} + \frac{1}{f} - \frac{1}{2})}\\
+        \end{cases}
+    \end{equation}
+
+    According to the two lemmas, all applicable $v, f$ and the corresponding $E, V, F$ are listed below in \autoref{tab:platonic-solids} To forms a platonic solid, the solution of this system must follows the constraint $v, f, V, E, F \in N^+$. Results verifies that there are only 5 types of regular polyhedra (\emph{Platonic Solids}).
+    
+    \begin{table}[H]
+        \centering
+        \caption{All applicable $v, f$ and the corresponding $E, V, F$.}
+        \begin{tabular}{ccccccll}
+            \toprule
+            $f$ & $v$ && $E$ & $F$ & $V$ && Remark\\
+            \midrule 
+            3 & 3 && 6 & 4 & 4 && Tetrahedron\\
+            3 & 4 && 12 & 8 & 6 && Octahedron\\
+            3 & 5 && 30 & 20 & 12 && Dodecahedron\\
+            4 & 3 && 12 & 6 & 8 && Cube\\
+            5 & 3 && 30 & 20 & 12 && Icosahedron\\
+            \bottomrule 
+        \end{tabular}
+        \label{tab:platonic-solids}
+    \end{table}
     \tbf{}
 \end{proof}
 
