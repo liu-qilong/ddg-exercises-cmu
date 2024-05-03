@@ -94,8 +94,8 @@
         \end{cases}
     \end{equation}
 
-    According to the two lemmas, all applicable $v, f$ and the corresponding $E, V, F$ are listed below in \autoref{tab:platonic-solids} To forms a platonic solid, the solution of this system must follows the constraint $v, f, V, E, F \in N^+$. Results verifies that there are only 5 types of regular polyhedra (\emph{Platonic Solids}).
-    
+    According to the two lemmas, all applicable $v, f$ and the corresponding $E, V, F$ are listed below in \autoref{tab:platonic-solids} To forms a platonic solid, the solution of this system must follows the constraint $v, f, V, E, F \in N^+$. Results verifies that there are only 5 types of platonic solids.
+
     \begin{table}[H]
         \centering
         \caption{All applicable $v, f$ and the corresponding $E, V, F$.}
@@ -112,10 +112,38 @@
         \end{tabular}
         \label{tab:platonic-solids}
     \end{table}
-    \tbf{}
 \end{proof}
 
 \section{Regular Valence}
+
+\begin{lemma}
+    If all vertices has regular valence, i.e. $v=6$, then the averaged edge number $\overline{f} = 3$.
+\end{lemma}
+
+\begin{proof}
+    If the averaged edge number $\overline{f} > 3$, then the averaged inner angle of all faces $\overline{\alpha} = \frac{\overline{f}-2}{\overline{f}}\pi > \frac{1}{3}\pi$. Then the averaged sum of inner angles of a vertices should be $6 \cdot \frac{\overline{f} - 2}{\overline{f}}\pi > 2\pi$, which is impossible. Therefore, $\overline{f} \leq 3$. At the same time, to form a 3D face, the edge number of each face should be greater than 3, thus $\overline{f} \geq 3$. In conclusion, $\overline{f} = 3$.
+\end{proof}
+
+\begin{theorem}
+    If all vertices has regular valence ($v = 6$), then it's a torus ($g = 1$).
+\end{theorem}
+
+\begin{proof}
+    \autoref{eq:platonic} can be generalized a little bit in terms of the averaged edge number of faces $\overline{f}$:
+
+    \begin{equation}
+        E = \frac{v}{2} V = \frac{\overline{f}}{2} F\\
+        \Rightarrow E = 3 V = \frac{3}{2} F
+    \end{equation}
+
+    Constitute to Eular-Poincar\'e formula
+
+    \begin{equation}
+        2 - 2g = V - E + F = \frac{1}{3} E - E + \frac{2}{3} E = 0
+    \end{equation}
+
+    Solve $2 - 2g = 0$ gets $g = 1$.
+\end{proof}
 
 \section{Minimum Irregular Valence}
 
