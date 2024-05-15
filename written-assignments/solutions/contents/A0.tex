@@ -118,6 +118,7 @@
 
 \begin{lemma}
     If all vertices has regular valence, i.e. $v=6$, then the averaged edge number $\overline{f} = 3$.
+    \label{lemma:avg-face-edge-for-regular-valance}
 \end{lemma}
 
 \begin{proof}
@@ -146,6 +147,35 @@
 \end{proof}
 
 \section{Minimum Irregular Valence}
+
+\begin{proof}
+    Lets assume the reduction of each vertex's valence from 6 sums up to $\Delta$. Since each edge can be considered distributed to 2 vertex, then the reduction of edges sums up to $\Delta/2$. Therefore:
+
+    \begin{equation}
+        E = 3V - \frac{\Delta}{2} \Rightarrow V = \frac{E}{3} + \frac{\Delta}{6}
+        \label{eq:min-irr-val-1}
+    \end{equation}
+
+    Lets assume that there is only a limited number of irregular valance vertices, therefore $\overline{v} \approx 3$. Similar to \autoref{lemma:avg-face-edge-for-regular-valance}, $\overline{f} \approx 3$, then
+
+    \begin{equation}        
+        E = \frac{\overline{f}}{2}F \approx \frac{3}{2} F
+        \label{eq:min-irr-val-2}
+    \end{equation}
+
+    Constitute \autoref{eq:min-irr-val-1} and \autoref{eq:min-irr-val-2} into Euler's formula:
+
+    \begin{equation}
+        2 - 2g = V - E + F \approx \frac{E}{3} + \frac{\Delta}{6} - E + \frac{2}{3}E = \frac{\Delta}{6}
+        \Rightarrow \Delta \approx 12 - 12g
+    \end{equation}
+
+    \begin{enumerate}
+        \item If $g = 0$, then $\Delta \approx 12$, which means the minimal total reduction of valence is 12. Since each vertex has at least 3 valence, then there are at least 4 vertices are reduced to 3 valence. This means the minimal irregular vertex is 4.
+        \item If $g = 1$, then $\Delta \approx 0$, which means the minimal total reduction of valence is 0. This means the minimal irregular vertex is 0.
+        \item If $g > 1$, then $\Delta \approx 2 - 2g < 0$, which means that there are vertices with more than 6 valance. Since there is no limit to the maximum valance, there can be one vertex with all the added valance. Therefore, the minimal irregular vertex is 1.
+    \end{enumerate}
+\end{proof}
 
 \section{Mean Valence (Triangle Mesh)}
 
