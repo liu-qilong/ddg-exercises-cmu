@@ -179,6 +179,27 @@
 
 \section{Mean Valence (Triangle Mesh)}
 
+\begin{proof}
+    Suppose additional vertices are evenly added to the surface, and all vertices are connected with the nearest 2 vertices to form triangle faces. When the vertices number approaches infinity:
+
+    \begin{enumerate}
+        \item Since the vertices are added evenly, the averaged distances from a vertex to its nearest 2 vertices shall be the same, i.e. statistically these vertices are most likely to form a equilateral triangle. Therefore, the averaged angle between valences shall be $\frac{\pi}{3}$.
+        \item More over, as the vertices number approaches infinity, the faces around a vertex are going to form a flatter and flatter surface. Therefore, the sum of angles between valances around a vertex shall approaches $2\pi$. Considering that the averaged angle between valance is $\frac{\pi}{3}$, the averaged valance $\overline{v} = 6$.
+    \end{enumerate}
+
+    Since $\overline{v} = 6$, according to \autoref{lemma:avg-face-edge-for-regular-valance}, $\overline{f} = 3$. Constitute them to the following equation:
+
+    \begin{equation}
+        E = \frac{\overline{v}}{2} V = \frac{\overline{f}}{2} F
+        \Rightarrow \begin{cases}
+            \frac{E}{V} = \frac{\overline{v}}{2} = 3\\
+            \frac{F}{V} = \frac{\overline{v}}{\overline{f}} = 2\\
+        \end{cases}
+    \end{equation}
+
+    Thus $V:E:F = 1:3:2$
+\end{proof}
+
 \section{Mean Valence (Quad Mesh)}
 
 \section{Mean Valence (Tetrahedral)}
