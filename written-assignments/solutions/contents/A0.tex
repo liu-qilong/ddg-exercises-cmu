@@ -180,24 +180,31 @@
 \section{Mean Valence (Triangle Mesh)}
 
 \begin{proof}
-    Suppose additional vertices are evenly added to the surface, and all vertices are connected with the nearest 2 vertices to form triangle faces. When the vertices number approaches infinity:
-
-    \begin{enumerate}
-        \item Since the vertices are added evenly, the averaged distances from a vertex to its nearest 2 vertices shall be the same, i.e. statistically these vertices are most likely to form a equilateral triangle. Therefore, the averaged angle between valences shall be $\frac{\pi}{3}$.
-        \item More over, as the vertices number approaches infinity, the faces around a vertex are going to form a flatter and flatter surface. Therefore, the sum of angles between valances around a vertex shall approaches $2\pi$. Considering that the averaged angle between valance is $\frac{\pi}{3}$, the averaged valance $\overline{v} = 6$.
-    \end{enumerate}
-
-    Since this is a triangle mesh, then $f = 3$. Constitute $f = 3, \overline{v} = 6$ to the following equation:
+    Divide both side of Eular-Poincar\'e formula with $E$, as $V$ approaches infinity, $E$ also approaches infinity:
 
     \begin{equation}
-        E = \frac{\overline{v}}{2} V = \frac{f}{2} F
-        \Rightarrow \begin{cases}
-            \frac{E}{V} = \frac{\overline{v}}{2} = 3\\
-            \frac{F}{V} = \frac{\overline{v}}{f} = 2\\
-        \end{cases}
+        \lim_{E \to \infty} \frac{V - E + F}{E} = \lim_{E \to \infty} 2 - 2g
+        \Rightarrow \frac{V}{E} - 1 + \frac{F}{E} = 0
+        \label{eq:mean-valence-1}
     \end{equation}
 
-    Thus $V:E:F = 1:3:2$
+    According to \autoref{eq:platonic}, in terms of averaged valence $\overline{v}$ and averaged face edge number $\overline{f}$:
+
+    \begin{equation}
+        E = \frac{\overline{v}}{2} V = \frac{\overline{f}}{2} F
+        \label{eq:mean-valence-2}
+    \end{equation}
+
+    Since the mesh is made of triangles, $\overline{f} = 3$, thus $\frac{F}{E} = \frac{2}{\overline{f}} = \frac{2}{3}$. Constitute this into \autoref{eq:mean-valence-1}:
+
+    \begin{equation}
+        \frac{V}{E} - 1 + \frac{2}{3} = 0
+        \Rightarrow \frac{V}{E} = \frac{1}{3}
+    \end{equation}
+
+    Combining $\frac{V}{E} = \frac{1}{3}$ and $\frac{F}{E} = \frac{2}{3}$, we have $V:E:F = 1:3:2$.
+
+    More over, according to \autoref{eq:mean-valence-2}, $\frac{V}{E} = \frac{2}{\overline{v}}$, thus $\overline{v} = 2(\frac{V}{E})^{-1} = 6$.
 \end{proof}
 
 \section{Mean Valence (Quad Mesh)}
