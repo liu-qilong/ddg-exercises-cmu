@@ -156,7 +156,7 @@
         \label{eq:min-irr-val-1}
     \end{equation}
 
-    Lets assume that there is only a limited number of irregular valance vertices, therefore $\overline{v} \approx 3$. Similar to \autoref{lemma:avg-face-edge-for-regular-valance}, $\overline{f} \approx 3$, then
+    Lets assume that there is only a limited number of irregular valance vertices, therefore $\overline{v} \approx 6$. Similar to \autoref{lemma:avg-face-edge-for-regular-valance}, $\overline{f} \approx 3$, then
 
     \begin{equation}        
         E = \frac{\overline{f}}{2}F \approx \frac{3}{2} F
@@ -185,17 +185,17 @@
     \begin{equation}
         \lim_{E \to \infty} \frac{V - E + F}{E} = \lim_{E \to \infty} 2 - 2g
         \Rightarrow \frac{V}{E} - 1 + \frac{F}{E} = 0
-        \label{eq:mean-valence-1}
+        \label{eq:mean-valence-tri-mesh-1}
     \end{equation}
 
     According to \autoref{eq:platonic}, in terms of averaged valence $\overline{v}$ and averaged face edge number $\overline{f}$:
 
     \begin{equation}
         E = \frac{\overline{v}}{2} V = \frac{\overline{f}}{2} F
-        \label{eq:mean-valence-2}
+        \label{eq:mean-valence-tri-mesh-2}
     \end{equation}
 
-    Since the mesh is made of triangles, $\overline{f} = 3$, thus $\frac{F}{E} = \frac{2}{\overline{f}} = \frac{2}{3}$. Constitute this into \autoref{eq:mean-valence-1}:
+    Since the mesh is made of triangles, $\overline{f} = 3$, thus $\frac{F}{E} = \frac{2}{\overline{f}} = \frac{2}{3}$. Constitute this into \autoref{eq:mean-valence-tri-mesh-1}:
 
     \begin{equation}
         \frac{V}{E} - 1 + \frac{2}{3} = 0
@@ -204,10 +204,38 @@
 
     Combining $\frac{V}{E} = \frac{1}{3}$ and $\frac{F}{E} = \frac{2}{3}$, we have $V:E:F = 1:3:2$.
 
-    More over, according to \autoref{eq:mean-valence-2}, $\frac{V}{E} = \frac{2}{\overline{v}}$, thus $\overline{v} = 2(\frac{V}{E})^{-1} = 6$.
+    More over, according to \autoref{eq:mean-valence-tri-mesh-2}, $\frac{V}{E} = \frac{2}{\overline{v}}$, thus $\overline{v} = 2(\frac{V}{E})^{-1} = 6$.
 \end{proof}
 
 \section{Mean Valence (Quad Mesh)}
+    
+\begin{proof}
+    Divide both side of Eular-Poincar\'e formula with $E$, as $V$ approaches infinity, $E$ also approaches infinity:
+
+    \begin{equation}
+        \lim_{E \to \infty} \frac{V - E + F}{E} = \lim_{E \to \infty} 2 - 2g
+        \Rightarrow \frac{V}{E} - 1 + \frac{F}{E} = 0
+        \label{eq:mean-valence-quad-mesh-1}
+    \end{equation}
+
+    According to \autoref{eq:platonic}, in terms of averaged valence $\overline{v}$ and averaged face edge number $\overline{f}$:
+
+    \begin{equation}
+        E = \frac{\overline{v}}{2} V = \frac{\overline{f}}{2} Q
+        \label{eq:mean-valence-quad-mesh-2}
+    \end{equation}
+
+    Since the mesh is made of 4-sided quadrilaterials, $\overline{f} = 4$, thus $\frac{Q}{E} = \frac{2}{\overline{f}} = \frac{1}{2}$. Constitute this into \autoref{eq:mean-valence-quad-mesh-1}:
+
+    \begin{equation}
+        \frac{V}{E} - 1 + \frac{1}{2} = 0
+        \Rightarrow \frac{V}{E} = \frac{1}{2}
+    \end{equation}
+
+    Combining $\frac{V}{E} = \frac{1}{2}$ and $\frac{Q}{E} = \frac{1}{2}$, we have $V:E:Q = 1:2:1$.
+
+    More over, according to \autoref{eq:mean-valence-quad-mesh-2}, $\frac{V}{E} = \frac{2}{\overline{v}}$, thus $\overline{v} = 2(\frac{V}{E})^{-1} = 4$.
+\end{proof}
 
 \section{Mean Valence (Tetrahedral)}
 
