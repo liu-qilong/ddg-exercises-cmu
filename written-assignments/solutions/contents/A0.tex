@@ -238,45 +238,60 @@
 \end{proof}
 
 \section{Mean Valence (Tetrahedral)}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.3\textwidth]{figures/A0/icosahedron.png}
-        \caption{Icosahedron. Figure from course note.}
-        \label{fig:icosahedron}
-    \end{figure}
-    \begin{proof}
-        Since we only care about the asymptotic behavior, we can ignore boundary vertices. Also, it's appropriate to approximately assume that the link $Lk(i)$ of every vertex $i$ is a icosahedron, as shown in \autoref{fig:icosahedron}:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/A0/icosahedron.png}
+    \caption{Icosahedron. Figure from course note.}
+    \label{fig:icosahedron}
+\end{figure}
+\begin{proof}
+    Since we only care about the asymptotic behavior, we can ignore boundary vertices. Also, it's appropriate to approximately assume that the link $Lk(i)$ of every vertex $i$ is a icosahedron, as shown in \autoref{fig:icosahedron}:
 
-        \begin{enumerate}
-            \item Vertex $i$ has 12 valance, as well as all other vertices in the mesh. Since each valance (edge) is shared with 2 vertices, we have $E = \frac{12}{2} V \Rightarrow \frac{V}{E} = \frac{1}{6}$.
-            \item Consider any edge that connects one vertex of the icosahedron and vertex $i$, it's shared with 5 triangle faces. Since each triangle face has 3 edges, we have $E = \frac{3}{5} F \Rightarrow \frac{F}{E} = \frac{5}{3}$.
-        \end{enumerate}
-        
-        Divide $V - E + F - T = c$ with $E$ on both sides. As $E$ approaches infinity:
+    \begin{enumerate}
+        \item Vertex $i$ has 12 valance, as well as all other vertices in the mesh. Since each valance (edge) is shared with 2 vertices, we have $E = \frac{12}{2} V \Rightarrow \frac{V}{E} = \frac{1}{6}$.
+        \item Consider any edge that connects one vertex of the icosahedron and vertex $i$, it's shared with 5 triangle faces. Since each triangle face has 3 edges, we have $E = \frac{3}{5} F \Rightarrow \frac{F}{E} = \frac{5}{3}$.
+    \end{enumerate}
+    
+    Divide $V - E + F - T = c$ with $E$ on both sides. As $E$ approaches infinity:
 
-        \begin{equation}
-            \lim_{E \rightarrow \infty} \frac{V - E + F - T}{E} = \lim_{E \rightarrow \infty} \frac{c}{E}
-        \end{equation}
-        \begin{equation}
-            \Rightarrow \frac{V}{E} - 1 + \frac{F}{E} - \frac{T}{E} = 0
-            \Rightarrow \frac{1}{6} - 1 + \frac{5}{3} - \frac{T}{E} = 0
-            \Rightarrow \frac{T}{E} = \frac{5}{6}
-        \end{equation}
+    \begin{equation}
+        \lim_{E \rightarrow \infty} \frac{V - E + F - T}{E} = \lim_{E \rightarrow \infty} \frac{c}{E}
+    \end{equation}
+    \begin{equation}
+        \Rightarrow \frac{V}{E} - 1 + \frac{F}{E} - \frac{T}{E} = 0
+        \Rightarrow \frac{1}{6} - 1 + \frac{5}{3} - \frac{T}{E} = 0
+        \Rightarrow \frac{T}{E} = \frac{5}{6}
+    \end{equation}
 
-        Therefore
-        \begin{equation}
-            \begin{cases}
-                \frac{V}{E} = \frac{1}{6}\\
-                \frac{F}{E} = \frac{5}{3}\\
-                \frac{T}{E} = \frac{5}{6}
-            \end{cases}
-            \Rightarrow V:E:F:T = 1:6:10:5
-        \end{equation}
-    \end{proof}
+    Therefore
+    \begin{equation}
+        \begin{cases}
+            \frac{V}{E} = \frac{1}{6}\\
+            \frac{F}{E} = \frac{5}{3}\\
+            \frac{T}{E} = \frac{5}{6}
+        \end{cases}
+        \Rightarrow V:E:F:T = 1:6:10:5
+    \end{equation}
+\end{proof}
 
-    \emph{This ratio is roughly matched with the real examples in the course note.}
+\emph{This ratio is roughly matched with the real examples in the course note.}
 
 \section{Star, Closure, and Link}
+
+\emph{Solution.} $St(S) = \{
+    e, o, k,
+    a-e, b-e, f-e, k-e, j-e, d-e,
+    j-k, f-k, o-k, p-k,
+    f-o, l-o, q-o,p-o,
+    n-j-p, j-k-p
+\}$
+
+$Cl(s) = \text{region inside}\,a-b-f-l-q-p-n-j-d-a$
+
+$Lk(s) = \{
+    j-n, p-n,
+    d-j-e, d-a-e, a-b-e, v-f-e, f-k-e, f-o-l, l-q-o, q-p-o
+\}$
 
 \section{Boundary and Interior}
 
