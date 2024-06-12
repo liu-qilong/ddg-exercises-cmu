@@ -278,20 +278,40 @@
 
 \section{Star, Closure, and Link}
 
-\emph{Solution.} $St(S) = \{
-    e, o, k,
-    a-e, b-e, f-e, k-e, j-e, d-e,
-    j-k, f-k, o-k, p-k,
-    f-o, l-o, q-o,p-o,
-    n-j-p, j-k-p
-\}$
+$St(\mathcal S)$ is collection of all simplices $\sigma \in \mathcal K$ such that $\exists i \in \mathcal S, i \in \sigma$, as shown in \autoref{fig:ex8-st}:
 
-$Cl(s) = \text{region inside}\,a-b-f-l-q-p-n-j-d-a$
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/A0/ex8-st.png}
+    \caption{$St(\mathcal S)$}
+    \label{fig:ex8-st}
+\end{figure}
 
-$Lk(s) = \{
-    j-n, p-n,
-    d-j-e, d-a-e, a-b-e, v-f-e, f-k-e, f-o-l, l-q-o, q-p-o
-\}$
+$Cl(\mathcal S)$ is the smallest subcomplex of $\mathcal K$ containing $\mathcal S$, as shown in \autoref{fig:ex8-cl}:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/A0/ex8-cl.png}
+    \caption{$Cl(\mathcal S)$}
+    \label{fig:ex8-cl}
+\end{figure}
+
+To calculate $Lk(\mathcal S)$, $Cl(St(\mathcal S))$ and $St(Cl(\mathcal S))$ are needed, as shown in \autoref{fig:ex8-cl-st}. Then $Lk(\mathcal) = Cl(St(\mathcal S)) \ St(Cl(\mathcal S))$, as shown in \autoref{fig:ex8-lk}:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/A0/ex8-cl-st.png}
+    \includegraphics[width=0.3\textwidth]{figures/A0/ex8-st-cl.png}
+    \caption{Left: $Cl(St(\mathcal S))$ Right: $St(Cl(\mathcal S))$}
+    \label{fig:ex8-cl-st}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/A0/ex8-lk.png}
+    \caption{$Lk(\mathcal S)$}
+    \label{fig:ex8-lk}
+\end{figure}
 
 \section{Boundary and Interior}
 

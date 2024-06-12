@@ -183,6 +183,7 @@ class SimplicialComplexOperators {
          * @returns {module:Core.MeshSubset} The link of the given subset.
          */
         link(subset) {
+                // seems wrong!!!
                 let star_set = this.star(subset)
                 let link_set = this.closure(subset)
                 link_set.deleteSubset(star_set)
